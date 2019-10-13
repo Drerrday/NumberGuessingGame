@@ -36,19 +36,23 @@ namespace NumGuessingGame
 
             do
             {
+                Console.ResetColor(); //doesnt really do anything
                 int guessNum = GetIntegerFromUser("Guess a number: ");
                 if (guessNum < secretNumber)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("WRONG, Guess a Higher Number: ");
                     i += 1;
                 }
                 else if (guessNum > secretNumber)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("WRONG, Guess a Lower Number: ");
                     i += 1;
                 }
                 else if (guessNum == secretNumber)
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"You Win!!! it only took {i} number of guesses!");
                     close = 1;
                 }
